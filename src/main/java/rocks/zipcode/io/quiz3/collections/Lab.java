@@ -7,8 +7,8 @@ import java.util.List;
  */
 public class Lab {
 
-    List<Lab> lab;
     String labName;
+
 
     public Lab() {
         this(null);
@@ -30,8 +30,5 @@ public class Lab {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "";
-    }
+
 }

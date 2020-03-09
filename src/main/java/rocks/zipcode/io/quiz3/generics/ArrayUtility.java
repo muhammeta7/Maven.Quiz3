@@ -21,7 +21,6 @@ public class ArrayUtility<SomeType> {
                 return st;
             }
         }
-
         return null;
     }
 
@@ -32,7 +31,6 @@ public class ArrayUtility<SomeType> {
                 return st;
             }
         }
-
         return null;
     }
 
