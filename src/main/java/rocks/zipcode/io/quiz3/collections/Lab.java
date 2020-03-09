@@ -8,7 +8,7 @@ import java.util.List;
 public class Lab {
 
     String labName;
-
+    LabStatus status;
 
     public Lab() {
         this(null);
@@ -23,11 +23,11 @@ public class Lab {
     }
 
     public void setStatus(LabStatus labStatus) {
-
+        this.status = labStatus;
     }
 
     public LabStatus getStatus() {
-        return null;
+        return status;
     }
 
 

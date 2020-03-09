@@ -10,28 +10,53 @@ import java.util.TreeMap;
  */
 public class Student {
 
-    Map<Lab, LabStatus> labs;
-
+    List<Lab> labs;
 
     public Student() {
-        this.labs = new TreeMap<>();
+        this(new ArrayList<>());
     }
 
     public Student(List<Lab> labs) {
+        this.labs = labs;
     }
 
     public Lab getLab(String labName) {
+
+        for(Lab lab : labs){
+            if(lab.getName().equals(labName)){
+                return lab;
+            }
+        }
         return null;
+
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
+
+        if(labs.size() == 0){
+            throw new UnsupportedOperationException();
+        }
+        Lab someLab = getLab(labName);
+        someLab.setStatus(labStatus);
+
     }
 
     public void forkLab(Lab lab) {
-
+        labs.add(0, lab);
+        lab.setStatus(LabStatus.PENDING);
     }
 
     public LabStatus getLabStatus(String labName) {
-        return null;
+        Lab someLab = getLab(labName);
+        return someLab.getStatus();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for(Lab lab : labs){
+           str.append(lab.getName()).append(" > ").append(lab.getStatus()).append('\n');
+        }
+        return str.substring(0,str.length()-1).toString();
     }
 }
