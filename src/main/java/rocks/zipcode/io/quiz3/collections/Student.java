@@ -57,6 +57,6 @@ public class Student {
         for(Lab lab : labs){
            str.append(lab.getName()).append(" > ").append(lab.getStatus()).append('\n');
         }
-        return str.substring(0,str.length()-1).toString();
+        return str.substring(0,str.length()-1);
     }
 }
